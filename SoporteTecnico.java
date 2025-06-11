@@ -1,9 +1,14 @@
-public class SoporteTecnico extends Usuario {
-    
+import java.util.List;
 
-// Constructor
-    public SoporteTecnico(String Usuario, String contrasena, String nombre,String apellido) {
-        super(Usuario, contrasena, nombre,apellido);
+public class SoporteTecnico extends Usuario {
+    private List<Incidente> incidentes;
+
+
+// Constructor actualizado
+    public SoporteTecnico(String Usuario, String contrasena, String nombre, String apellido,
+                          List<Incidente> incidentesReportados, List<Incidente> incidentes) {
+        super(Usuario, contrasena, nombre, apellido, incidentesReportados);
+        this.incidentes = incidentes;
     }
 
 public void brindarAsistencia(Usuario usuario) {
@@ -18,7 +23,14 @@ public void brindarAsistencia(Usuario usuario) {
         System.out.println("Problema derivado al administrador: " + administrador.getNombre());
     }
 
+ // Getters y setters de incidentes
+    public List<Incidente> getIncidentes() {
+        return incidentes;
+    }
 
+    public void setIncidentes(List<Incidente> incidentes) {
+        this.incidentes = incidentes;
+    }
 
 
 }

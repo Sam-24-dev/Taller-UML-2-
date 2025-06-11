@@ -1,33 +1,29 @@
+
+import java.util.List;
+
 public class Administrador extends Usuario {
-
-    // Constructor
-    public Administrador(String Usuario, String contrasena, String nombre,String apellido) {
-        super(Usuario, contrasena, nombre,apellido);
+// Constructor actualizado
+    public Administrador(String Usuario, String contrasena, String nombre, String apellido, List<Incidente> incidentesReportados) {
+        super(Usuario, contrasena, nombre, apellido, incidentesReportados);
     }
 
-
-
-    // Método para crear un nuevo usuario con rol (simplificado)
-    public Usuario crearUsuarioConRol(String usuario, String contraseña) {
-        return new Usuario(usuario, contraseña, "Nombre Usuario","Apellido Usuario");
+    // Crear usuario (simulado)
+    public Usuario crearUsuarioConRol(String usuario, String contrasena, List<Incidente> incidentes) {
+        return new Usuario(usuario, contrasena, "Nombre Usuario", "Apellido Usuario", incidentes);
     }
 
-    // Método para asignar permisos (representado como mensaje)
     public void asignarPermiso(String usuario) {
-       
+        System.out.println("Permiso asignado al usuario: " + usuario);
     }
 
-    // Método para actualizar el software
     public void actualizarSoftware() {
-        
+        System.out.println("Software actualizado por el administrador.");
     }
 
-    // Método para asignar un profesor responsable a un curso
-    //public void asignarResponsable(Curso curso, Profesor profesor) {
-      //  curso.setResponsable(profesor);
-        //System.out.println("Profesor " + profesor.getNombre() + " asignado como responsable del curso: " + curso.getNombreCurso());
-   // }
-
+    // public void asignarResponsable(Curso curso, Profesor profesor) {
+    //     curso.setResponsable(profesor);
+    //     System.out.println("Profesor " + profesor.getNombre() + " asignado al curso: " + curso.getNombreCurso());
+    // }
 
 
 

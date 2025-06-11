@@ -10,11 +10,16 @@ public class Incidente {
     protected List<String>  log_actualizaciones;
     protected LocalDateTime fecha_cerrado;
     protected String tipo ; 
+    protected SoporteTecnico soporteTecnico; 
+    protected Usuario beneficiario; 
+
+
+
 
    // Constructor
     public Incidente(int id, LocalDateTime fecha_Reportado, String estado, String titulo,
                      String descripcion, List<String> log_actualizaciones,
-                     LocalDateTime fecha_cerrado, String tipo) {
+                     LocalDateTime fecha_cerrado, String tipo,SoporteTecnico soporteTecnico, Usuario beneficiario) {
         this.id = id;
         this.fecha_Reportado = fecha_Reportado;
         this.estado = estado;
@@ -23,6 +28,8 @@ public class Incidente {
         this.log_actualizaciones = log_actualizaciones;
         this.fecha_cerrado = fecha_cerrado;
         this.tipo = tipo;
+         this.soporteTecnico = soporteTecnico;
+        this.beneficiario = beneficiario;
     }
 
     // Getters y Setters
@@ -90,7 +97,12 @@ public class Incidente {
         this.tipo = tipo;
     }
 
+   
+    public SoporteTecnico getSoporteTecnico() { return soporteTecnico; }
+    public void setSoporteTecnico(SoporteTecnico soporteTecnico) { this.soporteTecnico = soporteTecnico; }
 
+    public Usuario getBeneficiario() { return beneficiario; }
+    public void setBeneficiario(Usuario beneficiario) { this.beneficiario = beneficiario; }
 
 
 
